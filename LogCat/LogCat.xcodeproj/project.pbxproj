@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8F367BFD1BB9736B007CBA6C /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F367BFC1BB9736B007CBA6C /* PreferencesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8F367BFD1BB9736B007CBA6C /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F367BFC1BB9736B007CBA6C /* PreferencesViewController.swift */; };
 		8F6EC42D1BB17CFD00D15A04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EC42C1BB17CFD00D15A04 /* AppDelegate.swift */; };
 		8F6EC42F1BB17CFD00D15A04 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EC42E1BB17CFD00D15A04 /* ViewController.swift */; };
 		8F6EC4311BB17CFD00D15A04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F6EC4301BB17CFD00D15A04 /* Assets.xcassets */; };
 		8F6EC4341BB17CFD00D15A04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F6EC4321BB17CFD00D15A04 /* Main.storyboard */; };
 		8F6EC43F1BB17CFD00D15A04 /* LogCatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EC43E1BB17CFD00D15A04 /* LogCatTests.swift */; };
 		8F6EC44A1BB17CFD00D15A04 /* LogCatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6EC4491BB17CFD00D15A04 /* LogCatUITests.swift */; };
+		8F82A2231BD8AD1800322DF2 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F82A2221BD8AD1800322DF2 /* WindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		8F6EC4451BB17CFD00D15A04 /* LogCatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LogCatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F6EC4491BB17CFD00D15A04 /* LogCatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCatUITests.swift; sourceTree = "<group>"; };
 		8F6EC44B1BB17CFD00D15A04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8F82A2221BD8AD1800322DF2 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				8F6EC4321BB17CFD00D15A04 /* Main.storyboard */,
 				8F6EC4351BB17CFD00D15A04 /* Info.plist */,
 				8F367BFC1BB9736B007CBA6C /* PreferencesViewController.swift */,
+				8F82A2221BD8AD1800322DF2 /* WindowController.swift */,
 			);
 			path = LogCat;
 			sourceTree = "<group>";
@@ -187,18 +190,21 @@
 		8F6EC4211BB17CFD00D15A04 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Johannes Steudle";
 				TargetAttributes = {
 					8F6EC4281BB17CFD00D15A04 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0830;
 					};
 					8F6EC4391BB17CFD00D15A04 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0830;
 						TestTargetID = 8F6EC4281BB17CFD00D15A04;
 					};
 					8F6EC4441BB17CFD00D15A04 = {
 						CreatedOnToolsVersion = 7.0;
+						LastSwiftMigration = 0830;
 						TestTargetID = 8F6EC4281BB17CFD00D15A04;
 					};
 				};
@@ -255,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F6EC42F1BB17CFD00D15A04 /* ViewController.swift in Sources */,
+				8F82A2231BD8AD1800322DF2 /* WindowController.swift in Sources */,
 				8F6EC42D1BB17CFD00D15A04 /* AppDelegate.swift in Sources */,
 				8F367BFD1BB9736B007CBA6C /* PreferencesViewController.swift in Sources */,
 			);
@@ -316,8 +323,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -339,7 +348,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -360,8 +369,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -377,9 +388,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -392,6 +404,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gitjay.LogCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -404,6 +417,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gitjay.LogCat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -416,6 +430,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gitjay.LogCatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LogCat.app/Contents/MacOS/LogCat";
 			};
 			name = Debug;
@@ -429,6 +444,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gitjay.LogCatTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LogCat.app/Contents/MacOS/LogCat";
 			};
 			name = Release;
@@ -441,6 +457,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gitjay.LogCatUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = LogCat;
 				USES_XCTRUNNER = YES;
 			};
@@ -454,6 +471,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gitjay.LogCatUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = LogCat;
 				USES_XCTRUNNER = YES;
 			};

@@ -12,18 +12,18 @@ class PreferencesViewController: NSViewController {
     
     @IBOutlet var labelAdbPath: NSTextField!
     
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        if let pathToAdb = userDefaults.valueForKey("adbPath") {
+        if let pathToAdb = userDefaults.value(forKey: "adbPath") {
             self.labelAdbPath.stringValue = pathToAdb as! String
         }
     }
     
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
             // Update the view, if already loaded.
         }
@@ -35,27 +35,27 @@ class PreferencesViewController: NSViewController {
     
     override func viewWillDisappear() {
         super.viewWillDisappear()
-        if userDefaults.valueForKey("adbPath") as! String != self.labelAdbPath.stringValue {
+        if userDefaults.value(forKey: "adbPath") as! String != self.labelAdbPath.stringValue {
             userDefaults.insertValue(self.labelAdbPath.stringValue, inPropertyWithKey: "adbPath")
         }
     }
     
-    @IBAction func buttonBrowse(sender: NSButton) {
+    @IBAction func buttonBrowse(_ sender: NSButton) {
         let panel = NSOpenPanel()
         panel.canChooseFiles = true
         panel.canChooseDirectories = false
         panel.allowsMultipleSelection = false
-        panel.beginWithCompletionHandler
+        panel.begin
             {
                 (result) -> Void in
                 if result == NSFileHandlingPanelOKButton
                 {
-                    if let url = panel.URL
+                    if let url = panel.url
                     {
-                        let fileManager = NSFileManager.defaultManager()
-                        if (fileManager.fileExistsAtPath(url.path!))
+                        let fileManager = FileManager.default
+                        if (fileManager.fileExists(atPath: url.path))
                         {
-                            self.labelAdbPath.stringValue = url.path!
+                            self.labelAdbPath.stringValue = url.path
                         }
                     }
                 }

@@ -13,31 +13,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
 
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }
 
-    func applicationWillTerminate(aNotification: NSNotification) {
+    func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
     
-    @IBAction func actionOpen(sender: NSMenuItem) {
+    @IBAction func actionOpen(_ sender: NSMenuItem) {
         print("File open")
         let panel = NSOpenPanel()
         panel.canChooseFiles = true
         panel.canChooseDirectories = false
         panel.allowsMultipleSelection = false
-        panel.beginWithCompletionHandler
+        panel.begin
             {
                 (result) -> Void in
                 if result == NSFileHandlingPanelOKButton
                 {
-                    if let url = panel.URL
+                    if let url = panel.url
                     {
-                        let fileManager = NSFileManager.defaultManager()
-                        if (fileManager.fileExistsAtPath(url.path!))
+                        let fileManager = FileManager.default
+                        if (fileManager.fileExists(atPath: url.path))
                         {
-                            print(url.path!)
+                            print(url.path)
                         }
                     }
                 }

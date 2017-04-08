@@ -16,7 +16,7 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
     }
 
-    override var representedObject: AnyObject? {
+    override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
         }
@@ -25,9 +25,9 @@ class ViewController: NSViewController {
     override func viewDidAppear() {
         super.viewDidAppear()
         
-        self.view.window?.titleVisibility = NSWindowTitleVisibility.Hidden;
+        self.view.window?.titleVisibility = NSWindowTitleVisibility.hidden;
         self.view.window?.titlebarAppearsTransparent = true;
-        self.view.window?.styleMask |= NSUnifiedTitleAndToolbarWindowMask;
+        self.view.window?.styleMask = NSWindowStyleMask.unifiedTitleAndToolbar;
     }
 
 }
